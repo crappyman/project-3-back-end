@@ -1,0 +1,217 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 132120576 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3469), pid=46508, tid=47580
+#
+# JRE version:  (17.0.1+12) (build )
+# Java VM: OpenJDK 64-Bit Server VM (17.0.1+12-39, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -ea -Didea.test.cyclic.buffer.size=1048576 -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3\lib\idea_rt.jar=64940:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3\bin -Dfile.encoding=UTF-8 com.intellij.rt.junit.JUnitStarter -ideVersion5 -junit5 com.project3.revtech.controller.ProductControllerTest,shouldDeleteProductLoggedIn
+
+Host: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz, 8 cores, 7G,  Windows 10 , 64 bit Build 22000 (10.0.22000.434)
+Time: Thu Feb 24 12:03:12 2022 Mountain Standard Time elapsed time: 0.049650 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000002a36daf78f0):  JavaThread "Unknown thread" [_thread_in_vm, id=47580, stack(0x000000c311b00000,0x000000c311c00000)]
+
+Stack: [0x000000c311b00000,0x000000c311c00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x66fa1a]
+V  [jvm.dll+0x7ce5a4]
+V  [jvm.dll+0x7cfd4e]
+V  [jvm.dll+0x7d03b3]
+V  [jvm.dll+0x242b05]
+V  [jvm.dll+0x66ca39]
+V  [jvm.dll+0x661502]
+V  [jvm.dll+0x30081b]
+V  [jvm.dll+0x307da6]
+V  [jvm.dll+0x357a1e]
+V  [jvm.dll+0x357c4f]
+V  [jvm.dll+0x2d7ad8]
+V  [jvm.dll+0x2d8a44]
+V  [jvm.dll+0x7a01e1]
+V  [jvm.dll+0x365791]
+V  [jvm.dll+0x77f6cc]
+V  [jvm.dll+0x3e812f]
+V  [jvm.dll+0x3e9bd1]
+C  [jli.dll+0x527b]
+C  [ucrtbase.dll+0x26c0c]
+C  [KERNEL32.DLL+0x154e0]
+C  [ntdll.dll+0x485b]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007fff9e1d7818, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000002a36db36590 GCTaskThread "GC Thread#0" [stack: 0x000000c311c00000,0x000000c311d00000] [id=44512]
+  0x000002a36db47010 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000c311d00000,0x000000c311e00000] [id=37256]
+  0x000002a36db47a20 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000c311e00000,0x000000c311f00000] [id=13360]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fff9da284b7]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000002a36daf2970] Heap_lock - owner thread: 0x000002a36daf78f0
+
+Heap address: 0x0000000082600000, size: 2010 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 0.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000082600000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fff9de08d89]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (1 events):
+Event: 0.019 Loaded shared library C:\Users\track\.jdks\openjdk-17.0.1\bin\java.dll
+
+
+Dynamic libraries:
+0x00007ff67c6d0000 - 0x00007ff67c6de000 	C:\Users\track\.jdks\openjdk-17.0.1\bin\java.exe
+0x00007fffecb60000 - 0x00007fffecd69000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007fffeb8a0000 - 0x00007fffeb95d000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007fffea050000 - 0x00007fffea3c4000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007fffea540000 - 0x00007fffea651000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007fffe2dc0000 - 0x00007fffe2dd8000 	C:\Users\track\.jdks\openjdk-17.0.1\bin\jli.dll
+0x00007fffeaab0000 - 0x00007fffeac5c000 	C:\WINDOWS\System32\USER32.dll
+0x00007fffea780000 - 0x00007fffea7a6000 	C:\WINDOWS\System32\win32u.dll
+0x00007fffeaef0000 - 0x00007fffeaf19000 	C:\WINDOWS\System32\GDI32.dll
+0x00007fffea660000 - 0x00007fffea772000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007fffea8a0000 - 0x00007fffea93d000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007fffe6860000 - 0x00007fffe687a000 	C:\Users\track\.jdks\openjdk-17.0.1\bin\VCRUNTIME140.dll
+0x00007fffe92b0000 - 0x00007fffe9555000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22000.120_none_9d947278b86cc467\COMCTL32.dll
+0x00007fffec820000 - 0x00007fffec8c3000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007fffeb860000 - 0x00007fffeb891000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007fffe98e0000 - 0x00007fffe98ec000 	C:\Users\track\.jdks\openjdk-17.0.1\bin\vcruntime140_1.dll
+0x00007fffda300000 - 0x00007fffda38d000 	C:\Users\track\.jdks\openjdk-17.0.1\bin\msvcp140.dll
+0x00007fff9d740000 - 0x00007fff9e2fe000 	C:\Users\track\.jdks\openjdk-17.0.1\bin\server\jvm.dll
+0x00007fffebc60000 - 0x00007fffebd0e000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007fffebbc0000 - 0x00007fffebc5e000 	C:\WINDOWS\System32\sechost.dll
+0x00007fffebda0000 - 0x00007fffebec0000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007fffebd10000 - 0x00007fffebd18000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007fffcee10000 - 0x00007fffcee19000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007fffec7a0000 - 0x00007fffec80f000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007fffe9080000 - 0x00007fffe908a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007fffe2d40000 - 0x00007fffe2d73000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007fffe8280000 - 0x00007fffe8298000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007fffe6b90000 - 0x00007fffe6b9a000 	C:\Users\track\.jdks\openjdk-17.0.1\bin\jimage.dll
+0x00007fffe99a0000 - 0x00007fffe9bc1000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007fffe9870000 - 0x00007fffe98a1000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007fffea7b0000 - 0x00007fffea82f000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007fffe68c0000 - 0x00007fffe68ce000 	C:\Users\track\.jdks\openjdk-17.0.1\bin\instrument.dll
+0x00007fffe2d90000 - 0x00007fffe2db5000 	C:\Users\track\.jdks\openjdk-17.0.1\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\track\.jdks\openjdk-17.0.1\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22000.120_none_9d947278b86cc467;C:\Users\track\.jdks\openjdk-17.0.1\bin\server
+
+VM Arguments:
+jvm_args: -ea -Didea.test.cyclic.buffer.size=1048576 -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3\lib\idea_rt.jar=64940:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3\bin -Dfile.encoding=UTF-8 
+java_command: com.intellij.rt.junit.JUnitStarter -ideVersion5 -junit5 com.project3.revtech.controller.ProductControllerTest,shouldDeleteProductLoggedIn
+java_class_path (initial): C:\Users\track\.m2\repository\org\junit\platform\junit-platform-launcher\1.8.1\junit-platform-launcher-1.8.1.jar;C:\Users\track\.m2\repository\org\junit\vintage\junit-vintage-engine\5.8.2\junit-vintage-engine-5.8.2.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3\lib\idea_rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3\plugins\junit\lib\junit5-rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3\plugins\junit\lib\junit-rt.jar;C:\Users\track\OneDrive\Desktop\Revature\primer\project-3-back-end\target\test-classes;C:\Users\track\OneDrive\Desktop\Revature\primer\project-3-back-end\target\classes;C:\Users\track\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;C:\Users\track\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\track\.m2\repository\org\junit\platform\junit-platform-commons\1.8.1\junit-platform-commons-1.8.1.jar;C:\Users\track\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\track\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.2\junit-jupiter-engine-5.8.2.jar;C:\Users\track\.m2\repository\org\junit\platform\junit-platform-engine\1.8.1\junit-platform-engine-1.8.1.jar;C:\Users\track\.m2\repository\org\springframework\boot\spring-boot-starter-mail\2.6.1\spring-boot-starter-mail-2.6.1.jar;C:\Users\track\.m2\repository\org\springframework\boot\spring-boot-starter\2.6.1\spring-boot-starter-2.6.1.jar;C:\Users\track\.m2\repository\org\springframework\boot\spring-boot-starter-logging\2.6.1\spring-boot-starter-logging-2.6.1.jar;C:\Users\track\.m2\repository\ch\qos\logback\logback-classic\1.2.7\logback-classic-1.2.7.jar;C:\Users\track\.m2\repository\ch\qos\logback\logback-core\1.2.7\logback-core-1.2.7.jar;C:\Users\track\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.14.1\log4j-to-slf4j-2.14.1.jar;C:\Users\track\.m2\repository\org\apache\logging\log4j\log4j-
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 132120576                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 2107637760                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 2107637760                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-11.0.13
+PATH=C:\Users\track\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\track\AppData\Local\Programs\Python\Python310\;C:\Program Files\nodejs\node_modules\npm\bin;C:\ProgramData\chocolatey\bin;C:\Users\track\AppData\Local\Microsoft\WindowsApps;;C:\Users\track\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3\bin;
+USERNAME=track
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 22000 (10.0.22000.434)
+OS uptime: 13 days 22:07 hours
+Hyper-V role detected
+
+CPU: total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 140 stepping 1 microcode 0x86, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, avx512f, avx512dq, avx512cd, avx512bw, avx512vl, sha, fma, vzeroupper, avx512_vpopcntdq, avx512_vpclmulqdq, avx512_vaes, avx512_vnni, clflush, clflushopt, clwb, avx512_vbmi2, avx512_vbmi, hv
+
+Memory: 4k page, system-wide physical 8033M (67M free)
+TotalPageFile size 32609M (AvailPageFile size 9M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 60M, peak: 186M
+
+vm_info: OpenJDK 64-Bit Server VM (17.0.1+12-39) for windows-amd64 JRE (17.0.1+12-39), built on Sep 27 2021 18:39:29 by "mach5one" with MS VC++ 16.8 (VS2019)
+
+END.
