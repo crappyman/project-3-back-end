@@ -21,9 +21,9 @@ public class ResetPasswordEntity {
 	@Column(name="reset_id")
 	private int resetId;
 	
-    @OneToOne(cascade = CascadeType.ALL, optional = false)
-    @PrimaryKeyJoinColumn(name = "user_id", referencedColumnName = "user_id")
-    private UserEntity user;
+    @OneToOne(cascade = CascadeType.ALL, optional = true)
+    @JoinColumn(name="user_email")
+    private UserEntity user; 
 	
     @Column(name = "reset_password_token")
     private String resetPasswordToken;
